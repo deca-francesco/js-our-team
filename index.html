@@ -33,10 +33,35 @@
                 Fuga iure voluptate iste quis facilis harum asperiores! Inventore provident incidunt omnis vero est
                 blanditiis unde dolores ducimus quam rerum, placeat repudiandae?
             </p>
-            <div id="cards_row" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            <div id="cards_row" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
 
             </div>
             <!-- /.row -->
+            <form class="card p-3 my-5">
+                <h2>Inserisci un nuovo membro</h2>
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il nome" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Ruolo</label>
+                        <input type="text" class="form-control" name="role" id="role" placeholder="Inserisci il ruolo" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Inserisci l'email" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Foto</label>
+                        <input type="text" class="form-control" name="img" id="img" placeholder="Inserisci il link dell'immagine" />
+                    </div>
+                    <button type="submit" class="btn btn-primary mx-auto col-sm-6 mt-4">Aggiungi</button>
+                </div>
+                <!-- /.row -->
+
+            </form>
+            <!-- /form -->
         </div>
         <!-- /.container -->
     </main>
