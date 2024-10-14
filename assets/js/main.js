@@ -41,7 +41,7 @@ const teamMembers = [
 ];
 
 let rowEl = document.getElementById("cards_row")
-let finalMarkup;
+let finalMarkup = "";   // se non lo inizializzo darà undefined
 
 for (let i = 0; i < teamMembers.length; i++) {
     let member = teamMembers[i];
@@ -60,8 +60,11 @@ for (let i = 0; i < teamMembers.length; i++) {
             </div>
         </div>
     </div>`;
+    // console.log(markup);
     
     finalMarkup += markup;
+    // console.log(finalMarkup);
+    
 }
 
 rowEl.innerHTML = finalMarkup;
