@@ -40,14 +40,51 @@ const teamMembers = [
     }
 ];
 
-let rowEl = document.getElementById("cards_row")
+const rowEl = document.getElementById("cards_row")
 let finalMarkup = "";   // se non lo inizializzo darà undefined
+const formEl = document.querySelector("form");
 
 for (let i = 0; i < teamMembers.length; i++) {
     let member = teamMembers[i];
+    // destrutturo l'oggetto[i] dell'array salvo l'oggetto member con le stesse proprietà e valori
     const { name, role, email, img } = member;
     console.log(member);
-    let markup = `
+    const markup = generateMember(member);
+    finalMarkup += markup;
+}
+// aggiorno la DOM una volta sola
+rowEl.innerHTML = finalMarkup;
+
+
+formEl.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // prendo i valori degli input
+    let name = document.getElementById("name").value;
+    let role = document.getElementById("role").value;
+    let email = document.getElementById("email").value;
+    let img = document.getElementById("img").value;
+
+    // salvo i valori nell'oggetto
+    const newMember = 
+    {
+        name,
+        role,
+        email,
+        img
+    }
+    // uso la funzione di prima per creare il markup
+    const markup = generateMember(newMember);
+
+    // inserisco il nuovo membro dopo gli altri già presenti
+    rowEl.insertAdjacentHTML("beforeend", markup)
+});
+
+
+function generateMember(member) {
+    // destrutturo l'oggetto[i] dell'array salvo l'oggetto member con le stesse proprietà e valori
+    const { name, role, email, img } = member;
+
+    return `
     <div class="col">
         <div class="d-flex bg-black text-white">
             <div>
@@ -60,13 +97,4 @@ for (let i = 0; i < teamMembers.length; i++) {
             </div>
         </div>
     </div>`;
-    // console.log(markup);
-    
-    finalMarkup += markup;
-    // console.log(finalMarkup);
-    
 }
-
-rowEl.innerHTML = finalMarkup;
-
-
